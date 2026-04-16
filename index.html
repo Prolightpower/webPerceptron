@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>L vs T Perceptron</title>
+
+  <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.2/core.css">
+  <script type="module" src="https://pyscript.net/releases/2023.11.2/core.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>L vs T Classifier</h1>
+  
+
+  <div id="grid-container"></div>
+
+  <div>
+   <button id="btn-classify" py-click="classify">Classify</button>
+   <button id="btn-load-l"   py-click="load_l">L</button>
+   <button id="btn-load-t"   py-click="load_t">T</button>
+   <button id="btn-clear"    py-click="clear_grid">Clear</button>
+  </div>
+
+  <p>Result:</p>
+  <div id="test-output">-</div>
+
+  <script type="py" src="script.py"></script>
+
+  <script>
+    var container = document.getElementById('grid-container');
+    for (var i = 0; i < 25; i++) {
+      var cell = document.createElement('div');
+      cell.className = 'cell';
+      cell.addEventListener('click', function() {
+        this.classList.toggle('on');
+      });
+      container.appendChild(cell);
+    }
+  </script>
+
+</body>
+</html>
